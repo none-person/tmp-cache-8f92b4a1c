@@ -1,8 +1,62 @@
 ======================================
-[*] Request ID: INFO_1773938087.4125757
-[*] Request Type: INFO
+[*] Request ID: VIDEO_1773938152.3603687
+[*] Request Type: VIDEO
 [*] Target URL: https://es.thisvid.com/videos/incredible-lesbian-foot-domination/
-[*] Requested Format: NONE
+[*] Requested Format: 240p
 ======================================
-[*] Starting INFO Extraction...
-[+] Standard Extraction Succeeded.
+==========================================================
+  [*] Starting High-Speed Video Download (Aria2c)
+[generic] Extracting URL: https://es.thisvid.com/videos/incredible-lesbian-foot-domination/
+[generic] incredible-lesbian-foot-domination: Downloading webpage
+WARNING: [generic] Falling back on generic information extractor
+[generic] incredible-lesbian-foot-domination: Extracting information
+WARNING: [generic] Untested major version (15.4.12.4) in player engine - download may fail.
+[info] 3278237: Downloading 1 format(s): 240p
+[download] Destination: raw_video.mp4
+[download] Writing temporary cookies file to "/tmp/tmpo0v3ca8g.cookies"
+[#eb5e06 1.3MiB/60MiB(2%) CN:16 DL:6.5MiB ETA:8s]
+[#eb5e06 8.8MiB/60MiB(14%) CN:16 DL:6.2MiB ETA:8s]
+[#eb5e06 10MiB/60MiB(17%) CN:16 DL:4.1MiB ETA:11s]
+[#eb5e06 11MiB/60MiB(19%) CN:16 DL:3.3MiB ETA:14s]
+[#eb5e06 13MiB/60MiB(21%) CN:16 DL:2.9MiB ETA:16s]
+[#eb5e06 14MiB/60MiB(23%) CN:16 DL:2.6MiB ETA:17s]
+[#eb5e06 15MiB/60MiB(26%) CN:16 DL:2.4MiB ETA:18s]
+[#eb5e06 17MiB/60MiB(28%) CN:16 DL:2.2MiB ETA:18s]
+[#eb5e06 18MiB/60MiB(30%) CN:16 DL:2.1MiB ETA:19s]
+[#eb5e06 19MiB/60MiB(33%) CN:16 DL:2.0MiB ETA:19s]
+[#eb5e06 21MiB/60MiB(35%) CN:16 DL:1.3MiB ETA:29s]
+[#eb5e06 22MiB/60MiB(37%) CN:16 DL:1.2MiB ETA:29s]
+[#eb5e06 23MiB/60MiB(39%) CN:16 DL:1.2MiB ETA:27s]
+[#eb5e06 25MiB/60MiB(41%) CN:16 DL:1.2MiB ETA:27s]
+[#eb5e06 26MiB/60MiB(44%) CN:16 DL:1.2MiB ETA:25s]
+[#eb5e06 27MiB/60MiB(46%) CN:16 DL:1.2MiB ETA:24s]
+[#eb5e06 29MiB/60MiB(48%) CN:16 DL:1.2MiB ETA:23s]
+[#eb5e06 30MiB/60MiB(50%) CN:16 DL:1.2MiB ETA:22s]
+[#eb5e06 31MiB/60MiB(53%) CN:16 DL:1.2MiB ETA:21s]
+[#eb5e06 33MiB/60MiB(56%) CN:16 DL:1.3MiB ETA:19s]
+[#eb5e06 35MiB/60MiB(58%) CN:16 DL:1.3MiB ETA:18s]
+[#eb5e06 36MiB/60MiB(60%) CN:16 DL:1.3MiB ETA:17s]
+[#eb5e06 37MiB/60MiB(63%) CN:16 DL:1.3MiB ETA:16s]
+[#eb5e06 39MiB/60MiB(65%) CN:16 DL:1.3MiB ETA:15s]
+[#eb5e06 40MiB/60MiB(67%) CN:16 DL:1.3MiB ETA:14s]
+[#eb5e06 42MiB/60MiB(70%) CN:16 DL:1.4MiB ETA:12s]
+[#eb5e06 43MiB/60MiB(72%) CN:16 DL:1.4MiB ETA:11s]
+[#eb5e06 45MiB/60MiB(75%) CN:16 DL:1.3MiB ETA:10s]
+[#eb5e06 46MiB/60MiB(77%) CN:16 DL:1.4MiB ETA:9s]
+[#eb5e06 47MiB/60MiB(79%) CN:16 DL:1.3MiB ETA:8s]
+[#eb5e06 50MiB/60MiB(83%) CN:16 DL:1.5MiB ETA:6s]
+[#eb5e06 53MiB/60MiB(88%) CN:10 DL:1.7MiB ETA:3s]
+[#eb5e06 54MiB/60MiB(90%) CN:10 DL:1.6MiB ETA:3s]
+[#eb5e06 54MiB/60MiB(91%) CN:10 DL:1.5MiB ETA:3s]
+[#eb5e06 55MiB/60MiB(92%) CN:10 DL:1.4MiB ETA:2s]
+[#eb5e06 56MiB/60MiB(94%) CN:10 DL:1.4MiB ETA:2s]
+[#eb5e06 57MiB/60MiB(95%) CN:8 DL:1.3MiB ETA:1s]
+[#eb5e06 58MiB/60MiB(96%) CN:4 DL:1.2MiB ETA:1s]
+[#eb5e06 58MiB/60MiB(98%) CN:3 DL:1.2MiB]
+[#eb5e06 59MiB/60MiB(98%) CN:3 DL:0.9MiB]
+[#eb5e06 59MiB/60MiB(98%) CN:3 DL:668KiB ETA:1s]
+[#eb5e06 59MiB/60MiB(99%) CN:3 DL:620KiB]
+[#eb5e06 59MiB/60MiB(99%) CN:3 DL:553KiB]
+[download] 100% of   60.02MiB in 00:00:43 at 1.38MiB/s
+[+] Download successful: raw_video.mp4
+frame=    0 fps=0.0 q=0.0 size=       0kB time=00:00:00.06 bitrate=   5.5kbits/s speed=31.8x    frame=  824 fps=0.0 q=30.0 size=    1280kB time=00:00:27.77 bitrate= 377.6kbits/s speed=55.3x    frame= 1634 fps=1630 q=28.0 size=    2816kB time=00:00:54.77 bitrate= 421.2kbits/s speed=54.6x    frame= 2430 fps=1617 q=28.0 size=    4608kB time=00:01:21.29 bitrate= 464.4kbits/s speed=54.1x    frame= 3228 fps=1612 q=28.0 size=    6144kB time=00:01:47.90 bitrate= 466.5kbits/s speed=53.9x    frame= 3981 fps=1591 q=29.0 size=    7680kB time=00:02:13.00 bitrate= 473.0kbits/s speed=53.1x    frame= 4786 fps=1594 q=30.0 size=    9472kB time=00:02:39.84 bitrate= 485.4kbits/s speed=53.2x    frame= 5543 fps=1582 q=27.0 size=   11520kB time=00:03:05.08 bitrate= 509.9kbits/s speed=52.8x    frame= 6365 fps=1590 q=28.0 size=   13568kB time=00:03:32.48 bitrate= 523.1kbits/s speed=53.1x    frame= 7168 fps=1592 q=30.0 size=   15360kB time=00:03:59.23 bitrate= 526.0kbits/s speed=53.1x    frame= 7913 fps=1581 q=29.0 size=   17152kB time=00:04:24.08 bitrate= 532.1kbits/s speed=52.8x    frame= 8783 fps=1596 q=28.0 size=   19456kB time=00:04:53.08 bitrate= 543.8kbits/s speed=53.3x    frame= 9583 fps=1596 q=30.0 size=   21504kB time=00:05:19.73 bitrate= 551.0kbits/s speed=53.2x    frame=10358 fps=1592 q=30.0 size=   23552kB time=00:05:45.58 bitrate= 558.3kbits/s speed=53.1x    frame=11170 fps=1595 q=31.0 size=   25600kB time=00:06:12.63 bitrate= 562.8kbits/s speed=53.2x    frame=11951 fps=1592 q=30.0 size=   27648kB time=00:06:38.68 bitrate= 568.1kbits/s speed=53.1x    frame=12772 fps=1595 q=30.0 size=   29440kB time=00:07:06.03 bitrate= 566.1kbits/s speed=53.2x    frame=13523 fps=1590 q=29.0 size=   30976kB time=00:07:31.07 bitrate= 562.6kbits/s speed=  53x    frame=14333 fps=1591 q=29.0 size=   33024kB time=00:07:58.07 bitrate= 565.9kbits/s speed=53.1x    frame=15120 fps=1591 q=30.0 size=   34816kB time=00:08:24.29 bitrate= 565.6kbits/s speed=  53x    frame=15922 fps=1591 q=29.0 size=   36608kB time=00:08:51.04 bitrate= 564.7kbits/s speed=53.1x    frame=16644 fps=1584 q=28.0 size=   38144kB time=00:09:15.09 bitrate= 562.9kbits/s speed=52.8x    frame=17493 fps=1589 q=28.0 size=   39936kB time=00:09:43.40 bitrate= 560.8kbits/s speed=  53x    frame=18328 fps=1593 q=29.0 size=   41472kB time=00:10:11.24 bitrate= 555.8kbits/s speed=53.1x    frame=19079 fps=1589 q=30.0 size=   43008kB time=00:10:36.27 bitrate= 553.7kbits/s speed=  53x    frame=19885 fps=1590 q=29.0 size=   44800kB time=00:11:03.13 bitrate= 553.4kbits/s speed=  53x    frame=20635 fps=1586 q=30.0 size=   46592kB time=00:11:28.12 bitrate= 554.7kbits/s speed=52.9x    frame=21445 fps=1588 q=29.0 size=   48384kB time=00:11:55.12 bitrate= 554.3kbits/s speed=52.9x    frame=22208 fps=1585 q=27.0 size=   49920kB time=00:12:20.55 bitrate= 552.2kbits/s speed=52.9x    frame=23024 fps=1587 q=29.0 size=   51456kB time=00:12:47.76 bitrate= 549.0kbits/s speed=52.9x    frame=23818 fps=1587 q=29.0 size=   52992kB time=00:13:14.23 bitrate= 546.6kbits/s speed=52.9x    frame=24562 fps=1584 q=29.0 size=   54528kB time=00:13:39.03 bitrate= 545.4kbits/s speed=52.8x    frame=25330 fps=1582 q=30.0 size=   56064kB time=00:14:04.64 bitrate= 543.7kbits/s speed=52.8x    frame=26110 fps=1582 q=30.0 size=   57600kB time=00:14:30.63 bitrate= 542.0kbits/s speed=52.7x    frame=26840 fps=1578 q=29.0 size=   59136kB time=00:14:54.96 bitrate= 541.3kbits/s speed=52.6x    frame=27686 fps=1581 q=29.0 size=   61184kB time=00:15:23.17 bitrate= 542.9kbits/s speed=52.7x    frame=28471 fps=1581 q=29.0 size=   62720kB time=00:15:49.32 bitrate= 541.2kbits/s speed=52.7x    frame=29302 fps=1583 q=30.0 size=   64512kB time=00:16:17.04 bitrate= 540.9kbits/s speed=52.8x    frame=29966 fps=1597 q=-1.0 Lsize=   65928kB time=00:16:38.92 bitrate= 540.7kbits/s speed=53.2x    

@@ -1,8 +1,0 @@
-[generic] Extracting URL: https://es.thisvid.com/videos/incredible-lesbian-foot-domination/
-[generic] incredible-lesbian-foot-domination: Downloading webpage
-[generic] incredible-lesbian-foot-domination: Extracting information
-[info] Available formats for 3278237:
-ID   EXT RESOLUTION | PROTO | VCODEC  ACODEC
----------------------------------------------
-240p mp4 240p       | https | unknown unknown
-HQ   mp4 unknown    | https | unknown unknown
