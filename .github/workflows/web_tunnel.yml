@@ -1,0 +1,104 @@
+name: Ultimate Webpage Downloader
+
+on:
+  push:
+    paths:
+      - 'request_web.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  process-web:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Playwright
+        run: |
+          pip install playwright
+          playwright install chromium
+          playwright install-deps chromium
+
+      - name: Create Engine Script
+        run: |
+          cat << 'EOF' > engine.py
+          import sys, asyncio, os
+          from playwright.async_api import async_playwright
+
+          async def run(url):
+              async with async_playwright() as p:
+                  # اضافه کردن آرگومان‌های مخفی‌کننده به کرومیوم
+                  browser = await p.chromium.launch(
+                      headless=True,
+                      args=[
+                          '--disable-blink-features=AutomationControlled',
+                          '--disable-infobars',
+                          '--no-sandbox',
+                          '--disable-setuid-sandbox'
+                      ]
+                  )
+                  context = await browser.new_context(
+                      viewport={'width': 1920, 'height': 1080},
+                      user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+                  )
+                  
+                  # تزریق کدهای Stealth به صورت دستی برای دور زدن Cloudflare
+                  await context.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+                  
+                  page = await context.new_page()
+                  
+                  print(f"[*] Fetching: {url}")
+                  try:
+                      # زمان انتظار تا 90 ثانیه
+                      await page.goto(url, wait_until="networkidle", timeout=90000)
+                      
+                      # اسکرول هوشمند
+                      await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+                      await asyncio.sleep(5)
+                      
+                      # گرفتن خروجی MHTML
+                      client = await page.context.new_cdp_session(page)
+                      result = await client.send("Page.captureSnapshot", {"format": "mhtml"})
+                      
+                      os.makedirs("result", exist_ok=True)
+                      with open("result/offline_page.mhtml", "w", encoding="utf-8") as f:
+                          f.write(result["data"])
+                      
+                      print("[+] Successfully captured.")
+                  except Exception as e:
+                      os.makedirs("result", exist_ok=True)
+                      with open("result/error.log", "w") as f:
+                          f.write(f"Detailed Error: {str(e)}")
+                      print(f"[-] Error: {e}")
+                  finally:
+                      await browser.close()
+
+          if __name__ == "__main__":
+              target_url = sys.argv[1]
+              asyncio.run(run(target_url))
+          EOF
+
+      - name: Execute Capture
+        run: |
+          URL=$(sed -n '2p' request_web.txt | tr -d '\r')
+          REQ_ID=$(sed -n '4p' request_web.txt | tr -d '\r')
+          
+          python3 engine.py "$URL"
+          echo "$REQ_ID" > .server_done
+
+      - name: Commit & Push Back
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add result/ .server_done
+          git commit -m "Build: $GITHUB_RUN_ID" || echo "No changes"
+          git push origin HEAD:main

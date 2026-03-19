@@ -1,0 +1,94 @@
+19:46:11 - INFO - Setting up Git configurations for fast proxy tunneling...
+19:46:11 - DEBUG - Executing [Attempt 1/1]: git config --global http.proxy socks5h://127.0.0.1:1088
+19:46:11 - DEBUG - Exit Code: 0 | Output length: 0
+19:46:11 - DEBUG - Executing [Attempt 1/1]: git config --global https.proxy socks5h://127.0.0.1:1088
+19:46:11 - DEBUG - Exit Code: 0 | Output length: 0
+19:46:11 - DEBUG - Executing [Attempt 1/1]: git config --global http.postBuffer 1048576000
+19:46:11 - DEBUG - Exit Code: 0 | Output length: 0
+19:46:11 - DEBUG - Executing [Attempt 1/1]: git config --global http.lowSpeedLimit 1000
+19:46:11 - DEBUG - Exit Code: 0 | Output length: 0
+19:46:11 - DEBUG - Executing [Attempt 1/1]: git config --global http.lowSpeedTime 60
+19:46:12 - DEBUG - Exit Code: 0 | Output length: 0
+19:46:12 - DEBUG - Executing [Attempt 1/1]: git config --global core.compression 0
+19:46:12 - DEBUG - Exit Code: 0 | Output length: 0
+19:46:12 - DEBUG - Executing [Attempt 1/1]: git config --global gc.auto 0
+19:46:12 - DEBUG - Exit Code: 0 | Output length: 0
+19:46:12 - DEBUG - Executing [Attempt 1/1]: git config core.sparseCheckout false
+19:46:12 - DEBUG - Exit Code: 0 | Output length: 0
+19:46:23 - DEBUG - Executing [Attempt 1/1]: git add request_web.txt
+19:46:23 - DEBUG - Exit Code: 0 | Output length: 0
+19:46:23 - DEBUG - Executing [Attempt 1/1]: git commit --allow-empty -m 'Browser Requested WEB'
+19:46:23 - DEBUG - Exit Code: 0 | Output length: 530
+19:46:26 - DEBUG - Executing [Attempt 1/1]: git ls-remote origin main
+19:46:27 - DEBUG - Exit Code: 0 | Output length: 57
+19:46:27 - DEBUG - Executing [Attempt 1/1]: git ls-remote origin main
+19:46:29 - DEBUG - Exit Code: 0 | Output length: 57
+19:46:32 - DEBUG - Executing [Attempt 1/1]: git ls-remote origin main
+19:46:34 - DEBUG - Exit Code: 0 | Output length: 57
+19:46:37 - DEBUG - Executing [Attempt 1/1]: git ls-remote origin main
+19:46:38 - DEBUG - Exit Code: 0 | Output length: 57
+19:46:41 - DEBUG - Executing [Attempt 1/1]: git ls-remote origin main
+19:46:42 - DEBUG - Exit Code: 0 | Output length: 57
+19:46:45 - DEBUG - Executing [Attempt 1/1]: git ls-remote origin main
+19:46:47 - DEBUG - Exit Code: 0 | Output length: 57
+19:46:50 - DEBUG - Executing [Attempt 1/1]: git ls-remote origin main
+19:46:51 - DEBUG - Exit Code: 0 | Output length: 57
+19:46:54 - DEBUG - Executing [Attempt 1/1]: git ls-remote origin main
+19:46:56 - DEBUG - Exit Code: 0 | Output length: 57
+19:46:59 - DEBUG - Executing [Attempt 1/1]: git ls-remote origin main
+19:47:00 - DEBUG - Exit Code: 0 | Output length: 57
+19:47:03 - DEBUG - Executing [Attempt 1/1]: git ls-remote origin main
+19:47:05 - DEBUG - Exit Code: 0 | Output length: 57
+19:47:08 - DEBUG - Executing [Attempt 1/1]: git ls-remote origin main
+19:47:09 - DEBUG - Exit Code: 0 | Output length: 57
+19:47:09 - DEBUG - Executing [Attempt 1/1]: git config --get remote.origin.url
+19:47:09 - DEBUG - Exit Code: 0 | Output length: 96
+19:48:07 - DEBUG - Executing [Attempt 1/1]: git add request_web.txt
+19:48:07 - DEBUG - Exit Code: 0 | Output length: 0
+19:48:07 - DEBUG - Executing [Attempt 1/1]: git commit --allow-empty -m 'Browser Requested WEB'
+19:48:07 - DEBUG - Exit Code: 0 | Output length: 530
+19:48:10 - ERROR - Git Error on git push origin main: To https://github.com/none-person/tmp-cache-8f92b4a1c.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/none-person/tmp-cache-8f92b4a1c.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+19:48:14 - ERROR - Git Error on git push origin main: To https://github.com/none-person/tmp-cache-8f92b4a1c.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/none-person/tmp-cache-8f92b4a1c.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+19:48:18 - ERROR - Git Error on git push origin main: To https://github.com/none-person/tmp-cache-8f92b4a1c.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/none-person/tmp-cache-8f92b4a1c.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+19:48:22 - ERROR - Git Error on git push origin main: To https://github.com/none-person/tmp-cache-8f92b4a1c.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/none-person/tmp-cache-8f92b4a1c.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+19:48:27 - ERROR - Git Error on git push origin main: To https://github.com/none-person/tmp-cache-8f92b4a1c.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/none-person/tmp-cache-8f92b4a1c.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+

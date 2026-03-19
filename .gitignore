@@ -1,0 +1,5 @@
+# Ignore the sync script because it contains the token
+sync_and_push.sh
+sync_and_push.sh.sh
+# Ignore env files if you create them
+.env

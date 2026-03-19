@@ -1,0 +1,141 @@
+name: HLS Turbo Downloader
+
+on:
+  push:
+    paths:
+      - 'hls_request.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  download_and_process:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Turbo Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg aria2
+          pip install yt-dlp playwright
+          playwright install chromium
+
+      - name: Create Headless Extractor Script
+        run: |
+          cat << 'EOF' > extract_m3u8.py
+          import sys
+          from playwright.sync_api import sync_playwright
+
+          def get_m3u8(url):
+              with sync_playwright() as p:
+                  browser = p.chromium.launch(headless=True)
+                  page = browser.new_page()
+                  m3u8_url = None
+
+                  def handle_request(route, request):
+                      nonlocal m3u8_url
+                      if '.m3u8' in request.url and not m3u8_url:
+                          m3u8_url = request.url
+                      route.continue_()
+
+                  page.route("**/*", handle_request)
+                  try:
+                      page.goto(url, timeout=15000)
+                      page.wait_for_timeout(5000)
+                  except Exception:
+                      pass
+                  finally:
+                      browser.close()
+                  
+                  if m3u8_url:
+                      print(m3u8_url)
+                      sys.exit(0)
+                  else:
+                      sys.exit(1)
+
+          if __name__ == "__main__":
+              with open('hls_request.txt', 'r') as f:
+                  target_url = f.readline().strip()
+              get_m3u8(target_url)
+          EOF
+
+      - name: Extract Link and Download (Bypass 403)
+        run: |
+          mkdir -p hls_result
+          TARGET_URL=$(head -n 1 hls_request.txt | tr -d '\r')
+          ORIGIN=$(echo "$TARGET_URL" | grep -oP '^(https?://[^/]+)')
+          
+          echo "STARTING BROWSER TO EXTRACT M3U8 FOR: $TARGET_URL"
+          # فقط خط آخر خروجی که لینک است را نگه میداریم تا خطاهای دیباگ مرورگر مشکلی ایجاد نکنند
+          M3U8_LINK=$(python extract_m3u8.py | tail -n 1) || true
+          
+          if [ -z "$M3U8_LINK" ]; then
+            echo "ERROR_EXTRACT" > hls_status.txt
+            echo "error" > .server_done
+          else
+            echo "LINK EXTRACTED: $M3U8_LINK"
+            echo "DOWNLOADING WITH ARIA2C (16 CONNECTIONS)..."
+            yt-dlp --downloader aria2c --downloader-args aria2c:"-x 16 -s 16 -k 1M" \
+                   --add-header "Referer: $TARGET_URL" \
+                   --add-header "Origin: $ORIGIN" \
+                   --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" \
+                   -o "hls_result/video.mp4" "$M3U8_LINK" || { echo "ERROR_DOWNLOAD" > hls_status.txt; echo "error" > .server_done; }
+          fi
+
+      - name: Compress Video (HEVC/libx265)
+        run: |
+          if [ -f "hls_result/video.mp4" ]; then
+            echo "STARTING HEVC COMPRESSION..."
+            ffmpeg -i "hls_result/video.mp4" -c:v libx265 -crf 28 -preset ultrafast -c:a copy "hls_result/video_compressed.mp4" -y < /dev/null
+            
+            if [ -f "hls_result/video_compressed.mp4" ]; then
+              COMPRESSED_SIZE=$(stat -c%s "hls_result/video_compressed.mp4")
+              if [ "$COMPRESSED_SIZE" -gt 1000 ]; then
+                 rm "hls_result/video.mp4"
+                 mv "hls_result/video_compressed.mp4" "hls_result/video.mp4"
+                 echo "Compression successful."
+              else
+                 rm "hls_result/video_compressed.mp4"
+              fi
+            fi
+          fi
+
+      - name: Split Video for Transfer Limits
+        run: |
+          if [ -f "hls_result/video.mp4" ]; then
+            echo "SPLITTING VIDEO..."
+            split -b 45M "hls_result/video.mp4" "hls_result/part_"
+            rm "hls_result/video.mp4"
+            echo "SUCCESS" > hls_status.txt
+            echo "done" > .server_done
+          fi
+
+      - name: Ensure Fallback Status Files
+        run: |
+          if [ ! -f .server_done ]; then
+             echo "ERROR_UNKNOWN" > hls_status.txt
+             echo "error" > .server_done
+          fi
+
+      - name: Commit and Push to Client (With Retry Logic)
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global http.postBuffer 524288000
+          
+          git add .server_done hls_status.txt
+          git add hls_result/part_* 2>/dev/null || true
+          git commit -m "Server: Action complete (Video Split)" || true
+          
+          # اجرای حلقه تلاش مجدد برای آپلود فایل های حجیم خرد شده
+          for i in {1..5}; do
+            echo "Push attempt $i..."
+            if git push origin main; then
+              echo "Push successful!"
+              break
+            fi
+            echo "Push failed. Waiting 10 seconds before retrying..."
+            sleep 10
+          done
